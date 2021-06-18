@@ -1,0 +1,206 @@
+html, body {
+	margin: 0;
+	height: 100%;
+}
+
+body {
+	font-size: 16px;
+	font-family: 'Roboto', sans-serif;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+#root, .App {
+	height: 100%;
+}
+
+.App {
+	position: relative;
+	border-left: 1px solid #dddddd;
+	border-right: 1px solid #dddddd;
+}
+
+.wrapper {
+	max-width: 1024px;
+	width: 100%;
+	margin: auto;
+}
+
+nav {
+	display: flex;
+	justify-content: center;
+	background-color: #2196f3;
+	color: white;
+	box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
+	position: relative;
+}
+
+.hamburger {
+	position: absolute;
+	left: 20px;
+	top: 50%;
+	transform: translateY(-50%);
+	cursor: pointer;
+}
+
+.hamburger div {
+	width: 25px;
+	height: 3px;
+	background-color: #ffffff;
+	margin: 4px 0;
+	transition: 0.4s;
+	border-radius: 25px;
+}
+
+.hamburger.open>div {
+	opacity: 0;
+}
+
+.hamburger.open>div:first-child {
+	opacity: 1;
+	-webkit-transform: rotate( -45deg) translate(-5px, 3px);
+	transform: rotate( -45deg) translate(-5px, 3px);
+}
+
+.hamburger.open>div:last-child {
+	opacity: 1;
+	-webkit-transform: rotate( 45deg) translate(-6px, -5px);
+	transform: rotate( 45deg) translate(-6px, -5px);
+}
+
+.menuOption {
+	font-size: 20px;
+	line-height: 20px;
+	width: 32px;
+	height: 32px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 10px 25px;
+	padding: 5px;
+	background-color: white;
+	border-radius: 50%;
+	cursor: pointer;
+	position: relative;
+}
+
+/* .notifications::before {
+	content: '9+';
+	position: absolute;
+	top: -5px;
+	right: -5px;
+	width: 12px;
+	height: 12px;
+	background: #f50057;
+	color: white;
+	border-radius: 50%;
+	padding: 2px;
+	font-size: 10px;
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+} */
+
+.notifications ul {
+	position: absolute;
+	top: calc(100% + 7px);
+	left: 0;
+	margin: 0;
+	padding: 0 10px;
+	list-style-type: none;
+	background-color: white;
+	color: black;
+	border-radius: 5px;
+	z-index: 1;
+	box-shadow: 0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 6px 10px 0px rgb(0 0 0 / 14%), 0px 1px 18px 0px rgb(0 0 0 / 12%);
+}
+
+.notifications ul::before {
+	content: '';
+	position: absolute;
+	top: -5px;
+	left: 10px;
+	transform: rotate( 45deg);
+	background-color: white;
+	display: block;
+	height: 10px;
+	width: 10px;
+	background: linear-gradient( 135deg, white 50%, transparent 50%);
+}
+
+.notifications ul li {
+	display: block;
+	padding: 10px;
+	border-bottom: 2px solid #dddddd;
+	max-width: 300px;
+	width: calc(50vw - 10px);
+	word-break: break-word;
+	font-size: 14px;
+	color: #333333;
+	cursor: pointer;
+}
+
+.notifications ul li:hover {
+	background-color: rgba(120, 120, 120, 0.1);
+}
+
+.notifications ul li:last-child {
+	border-bottom: none;
+}
+
+.notifications ul li.none {
+	font-style: italic;
+	color: #999999;
+}
+
+.notifications ul li.none:hover {
+	background-color: unset;
+}
+
+.notifications.hidden ul {
+	display: none;
+}
+
+.sendNotificationBtn {
+	position: absolute;
+	bottom: 30px;
+	right: 30px;
+	width: 50px;
+	height: 50px;
+	font-size: 36px;
+	background-color: #f50057;
+	color: white;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	box-shadow: 0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 6px 10px 0px rgb(0 0 0 / 14%), 0px 1px 18px 0px rgb(0 0 0 / 12%);
+	transition-duration: 0.1s;
+}
+
+.sendNotificationBtn:active {
+	transform: scale(0.99);
+	box-shadow: 0px 1px 3px -1px rgb(0 0 0 / 20%), 0px 3px 5px 0px rgb(0 0 0 / 14%), 0px 1px 9px 0px rgb(0 0 0 / 12%);
+}
+
+.read {
+	background-color: rgba(120, 120, 120, 0.2);
+}
+
+@media screen and (max-width:1024px) {
+	.notifications ul {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	.notifications ul::before {
+		left: 50%;
+		transform: translateX(-50%) rotate( 45deg);
+	}
+	.notifications ul li {
+		width: calc(90vw);
+	}
+}
