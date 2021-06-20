@@ -1,7 +1,7 @@
 import React from 'react'
 // import firebase from '../utils/firebase'
 
-function Notification({ notification }) {
+function NotificationItem({ notification }) {
     /* const deleteNotification = () => {
         const notificationRef = firebase.database().ref("Notifications").child(notification.id)
         notificationRef.remove()
@@ -19,4 +19,4 @@ function Notification({ notification }) {
     )
 }
 
-export default Notification
+export default NotificationItem

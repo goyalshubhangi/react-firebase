@@ -192,6 +192,21 @@ nav {
 	background-color: rgba(120, 120, 120, 0.2);
 }
 
+button {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	font-size: inherit;
+	font-family: inherit;
+	padding: 10px 15px;
+	border-width: 3px;
+	border-radius: 5px;
+	background-color: #f50057;
+	color: white;
+	cursor: pointer;
+}
+
 @media screen and (max-width:1024px) {
 	.notifications ul {
 		left: 50%;
